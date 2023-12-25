@@ -1,0 +1,316 @@
+import "./services.scss";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const variants = {
+  initial: {
+    x: "-50%",
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const Services = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-100px" });
+
+  return (
+    <motion.div
+      className="services"
+      variants={variants}
+      initial="initial"
+      whileInView="animate"
+      ref={ref}
+    >
+      <motion.div className="wrapper" variants={variants}>
+        <motion.div variants={variants} className="textContainer">
+          <motion.h2 variants={variants}>What I Know</motion.h2>
+          <p>These are the skills I have worked on.</p>
+        </motion.div>
+        <motion.div variants={variants} className="boxes">
+
+          <motion.div className="box1" variants={variants}>
+            <h4>Frontend</h4>
+            <div className="skills">
+              <span className="skill">HTML</span>
+              <span className="skill">CSS</span>
+              <span className="skill">Tailwind CSS</span>
+              <span className="skill">JavaScript</span>
+              <span className="skill">React</span>
+              <span className="skill">Next.js</span>
+            </div>
+          </motion.div>
+
+          
+          <motion.div className="box2" variants={variants}>
+            <h4>Backend and Database</h4>
+            <div className="skills">
+              <span className="skill">Node.js</span>
+              <span className="skill">Express</span>
+              <span className="skill">NextAuth.js</span>
+              <span className="skill">MySQL</span>
+              <span className="skill">MongoDB</span>
+            </div>
+          </motion.div>
+          <motion.div className="box3" variants={variants}>
+            <h4>Languages</h4>
+            <div className="skills">
+              <span className="skill">C</span>
+              <span className="skill">C++</span>
+              <span className="skill">JavaScript</span>
+              <span className="skill">Python</span>
+            </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default Services;
+
+
+
+
+
+
+/* services.scss */
+
+.services {
+  padding: 50px 0;
+  // height: 100vh;
+  // border: 2px solid green;
+}
+
+.wrapper {
+  max-width: 1300px;
+  margin: 10vh auto;
+
+  @media (max-width: 800px) {
+    margin: 0 auto;
+  }
+}
+
+.textContainer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 2.5em;
+  color:#e3e3e3
+}
+
+p {
+  font-size: 1.2em;
+  color:#e3e3e3;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  .skill {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 8px;
+    border-radius: 6px;
+    background-color:#424242
+  }
+
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+
+    .box3 {
+      height: auto; // Reset the height for box3 on smaller screens
+    }
+  }
+}
+
+.box1,
+.box2,
+.box3 {
+  flex: 1;
+  margin: 15px;
+  padding: 20px;
+  background-color:#202020;
+  box-shadow: 0 0 10px rgba(126, 122, 122, 0.1);
+  border-radius: 8px;
+  text-align: center;
+
+  height: 250px;
+
+  @media (max-width: 800px) {
+    flex: 100%;
+    width: 80%;
+  }
+}
+
+h4 {
+  font-size: 1.2em;
+  color: #7d7c7c;
+  margin-bottom: 15px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill {
+  margin: 10px;
+  text-align: center;
+}
+
+span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.7em;
+  color: #a19c9c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import myImage from "../../assets/me.jpeg";
+import "./hero.scss";
+import {motion} from 'framer-motion'
+
+const textVariants={
+    initial:{
+        x:-500,
+        opacity:0
+    },
+    animate:{
+        x:0,
+        opacity:1,
+        transition:{
+          duration:1,
+          staggerChildren:0.1  
+        }
+    }
+}
+
+
+const Hero = () => {
+  return (
+    <div className="hero">
+      <div className="wrapper">
+        <motion.div className="textContainer" variants={textVariants} initial="initial" animate="animate">
+          <motion.h2 variants={textVariants} className="myName">Amit Singh</motion.h2>
+          <motion.h1 variants={textVariants}>Full-Stack Web Developer</motion.h1>
+          <motion.div variants={textVariants} className="buttons">
+            <motion.button variants={textVariants}>Resume</motion.button>
+            <motion.button variants={textVariants}>Contact Me</motion.button>
+          </motion.div>
+        </motion.div>
+        
+      </div>
+      <div className="imageContainer">
+        <img src={myImage} alt="myImage" />
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
+
+
+
+
+
+
+
+
+
+
+.hero{
+    height: calc(110vh - 110px);
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+     
+
+   .wrapper{
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+
+
+    .textContainer{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 50px;
+       
+        h2{
+            font-size: 30px;
+            color: rgb(98, 95, 98);
+            letter-spacing: 10px;
+        }
+        h1{
+            font-size:60px ;
+        }
+        .buttons{
+            button{
+                padding: 20px;
+                border: 1px solid white;
+                background-color: transparent;
+                color: white;
+                margin-right: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+   }
+
+    .imageContainer{
+        height: 100%;
+        position: absolute;
+        top: 200px;
+        right:300px;
+        
+    }
+    // for 1000 and 700px less media screen needed 
+}
