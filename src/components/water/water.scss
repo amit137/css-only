@@ -1,0 +1,102 @@
+$bgColor: #020438;
+$boxColor: #020438;
+$waterFColor: #4916b0;
+$waterBColor: #c7eeff;
+
+
+.box {
+  height: 180px;
+  width: 180px;
+  position: absolute;
+  top: 12%;
+  right: 10%;
+ 
+  //   background: $boxColor;
+  background: radial-gradient(
+    circle at 65% 15%,
+    rgb(21, 21, 21) 3%,
+    rgb(1, 1, 1) 60%,
+    rgb(8, 8, 8) 100%
+  );
+  border-radius: 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+
+  
+  @media (max-width: 800px) {
+    height: 120px;
+    width: 120px;
+    top: 6%;
+  }
+
+  .content {
+    font-size: 20px;
+    position: absolute;
+    top: 45%;
+    left: 26%;
+    z-index: 3;
+
+
+    @media (max-width: 800px) {
+        font-size: 14px;
+      }
+  }
+
+  .water {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transform: translateY(110%);
+    background: $waterFColor;
+    background: radial-gradient(
+        circle at 65% 15%,
+        #7b55c6bb 3%,
+        #43169b 60%,
+        #550ee2 100%
+      );
+    transition: all 0.7s;
+
+    &_wave {
+      width: 200%;
+      position: absolute;
+      bottom: 100%;
+
+      &_back {
+        right: 0;
+        fill: $waterBColor;
+        animation: wave-back 1.4s infinite linear;
+      }
+
+      &_front {
+        left: 0;
+        fill: $waterFColor;
+        margin-bottom: -1px;
+        animation: wave-front 0.7s infinite linear;
+      }
+    }
+  }
+
+  &:hover .water {
+    transform: translateY(0%);
+  }
+  &:hover {
+    transform: translate(10px,10px) ;
+}
+
+}
+
+@keyframes wave-front {
+  100% {
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes wave-back {
+  100% {
+    transform: translate(50%, 0%);
+  }
+}

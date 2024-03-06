@@ -1,0 +1,22 @@
+:root {
+    --backgroundColor: #4a3eaa;
+    --backgroundColorSecondary: #71678f;
+    --textPrimaryColor: #565b9d;
+  
+    --headlineBig: clamp(3rem, 10vw, 15rem);
+    --headlineSmall: clamp(1rem, 1.2vw, 6rem);
+  }
+
+.reveal {
+    background: var(--backgroundColor);
+    padding-left: 30%;
+    padding-right: 10%;
+  }
+  
+  .reveal-text {
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--backgroundColor);
+    filter: drop-shadow(0 0 0.06rem rgb(35, 16, 122));
+  }
+  

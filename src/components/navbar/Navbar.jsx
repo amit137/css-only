@@ -1,32 +1,35 @@
 import "./navbar.scss";
-import myImage from "../../assets/linkedin.png";
 import { motion } from "framer-motion";
-import Sidebar from "../sidebar/Sidebar";
+
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <Sidebar/>
+   
       <div className="wrapper">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1}}
           transition={{ duration: 0.5 }}
         >
-          Amit Singh
+          <h2 className="bg-heading"> <span style={{color:"#5818DE"}}>{"<"}</span>Amit Singh <span style={{color:"#5818DE"}}>{"/>"}</span></h2>
         </motion.span>
         <div className="social">
           <a href="#">
-            <img src={myImage} width={"50px"} alt="instagram" />
+            <InstagramIcon/>
+          </a>
+          <a href="#">
+           <GitHubIcon/>
           </a>
           <a href="">
-            <img src={myImage} alt="github" width={"50px"} />
+            <LinkedInIcon/>
           </a>
           <a href="">
-            <img src={myImage} alt="linkedin" width={"50px"} />
-          </a>
-          <a href="">
-            <img src="" alt="" width={"50px"} />
+        <EmailIcon/>
           </a>
         </div>
       </div>

@@ -1,0 +1,81 @@
+$colorOutline: #b3b6ca;
+$colorOutlineFade:
+    #581ecc ;
+$colorBg: #6236babb ;
+$widthMouse: 38px;
+$heightMouse: 60px;
+$borderMouse: 6px;
+$sizeTrackball:10px;
+$posMouse: 8px;
+$posTrackball: 20px;
+$shrinkTrackball: 0.8;
+
+$animDuration: 8s;
+
+
+
+.mouse {
+  position: relative;
+  width: $widthMouse;
+  height: $heightMouse;
+  border-radius: 100px;
+  motion: 40px;
+  margin-top: 100px;
+
+  animation: 
+    colorSlide $animDuration linear infinite,
+    nudgeMouse $animDuration ease-out infinite;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+  }
+  &:before {
+    width: $widthMouse - $borderMouse;
+    height: $heightMouse - $borderMouse;
+    background-color: $colorBg;
+    border-radius: 100px;
+  }
+  &:after {
+    background-color: $colorOutline;
+    width: $sizeTrackball;
+    height: $sizeTrackball;
+    border-radius: 100%;
+    animation: trackBallSlide $animDuration linear infinite;
+  }
+
+  
+}
+
+@keyframes colorSlide { 
+  0%, 50%, 90% { background-position: 0% 100%; }
+  20%, 80% { background-position: 0% 0%; }
+  21%, 81% { background-color: $colorOutlineFade; }
+  30%, 60% { background-color: $colorOutline; }
+}
+
+@keyframes trackBallSlide {
+  0%, 30%, 58%, 88%, 100% {
+    opacity: 1;
+    transform: scale(1) translateY(-$posTrackball);
+  }
+  6%, 36%, 66%, 0% {
+    opacity: 1;
+    transform: scale(0.9) translateY($posTrackball/4);
+  }
+  14%, 44%, 74% {
+    opacity: 0;
+    transform: scale($shrinkTrackball) translateY($posTrackball*2);
+  }
+  15%, 19%, 45%, 75% {
+    opacity: 0;
+    transform: scale($shrinkTrackball) translateY(-$posTrackball);
+  }
+}
+
+@keyframes nudgeMouse {
+  0%, 30%, 60%, 90% { transform: translateY(0); }
+  20%, 50%, 80% { transform: translateY($posMouse); }
+}

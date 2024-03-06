@@ -1,9 +1,11 @@
 
 
-.services {
-  padding: 50px 0;
-  border: 2px solid blue;
-  // animation:lay 1s;
+.skills {
+  width: 100vw;
+  padding: 40px 0;
+ background-color:#1a1527;
+  margin-top: -10vh;
+
 }
 
 @keyframes lay{
@@ -18,28 +20,35 @@
   }
 }
 
+
 .wrapper {
   max-width: 1300px;
   margin: 10vh auto;
-
   @media (max-width: 800px) {
     margin: 0 auto;
   }
+
+
+ 
 }
 
 .textContainer {
   text-align: center;
   margin-bottom: 30px;
+ 
 }
 
 h2 {
-  font-size: 2.5em;
-  color: #080808;
+  font-size:4em;
+  color:#372f4f;
+  font-weight: 700;
+  
 }
 
 p {
-  font-size: 1.2em;
-  color: #000000;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #fff7f7;
 }
 
 .boxes {
@@ -67,12 +76,11 @@ p {
   place-content: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  background-color: #e3e3e3;
-  width: 30vw;
+  background-color: #1a1527;
+  width: 20vw;
   position: relative;
-  margin: 30px auto;
-  
-  // margin:auto;
+  margin: 10px auto;
+  // border: 1px solid red;
 
   @media (max-width: 800px) {
     width: 70vw;
@@ -85,16 +93,15 @@ p {
     --rotateX: 0deg;
     --rotateY: 0deg;
     --angle: 10deg;
-    height: 350px;
+    height:400px;
     grid-column: 1/-1;
     grid-row: 1/-1;
     display: grid;
     grid-template-rows: 1fr 4fr;
-    background-color: #BBC4EB;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    box-shadow: rgba(37, 7, 135, 0.271) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
     justify-content: space-between;
     margin: 10px;
-    width: 30vw;
+    width: 20vw;
     aspect-ratio: 2/1;
     transform: perspective(var(--perspective)) rotateX(var(--rotateX))
       rotateY(var(--rotateY));
@@ -110,9 +117,9 @@ p {
 
     .title{
       text-align: center;
-      color: rgb(244, 239, 239);
+      color:gray;
       h4{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         margin-top: 20px;
       }
     }
@@ -124,7 +131,7 @@ p {
       flex-wrap: wrap;
       justify-content:flex-start;
       align-items: center;
-      width:30vw;
+      width:20vw;
 
       @media (max-width: 800px) {
         width: 70vw;
@@ -132,15 +139,25 @@ p {
        }
      
        .skill{
-      background-color: #737CCF;
+      // background-color: #ffffff;
+      border: 1px solid transparent;
+      border-radius:0.375rem;
+      background-color:#14131A;
         height: 20px;
-        padding: 20px;
+        padding:1.25rem;
         text-align: center;
+        color: rgb(255, 252, 252);
       //  margin: auto;
       margin-left: 30px;
        display: flex;
        align-items: center;
+
+       
+       
+
        }
+
+       
     }
   }
 

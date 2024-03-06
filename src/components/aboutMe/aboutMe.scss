@@ -1,0 +1,53 @@
+.about {
+  background-color: #ffffff;
+  width: 100vw;
+
+
+  .about-wrapper {
+  
+    padding: 30px;
+    width: 100vw;
+    margin: auto;
+    position: relative;
+    .about-code {
+      padding: 100px;
+
+      @media (max-width: 800px) {
+        margin: 0 auto;
+        padding: 14px;
+      }
+    }
+
+    .bg-heading{
+      
+        font-size:4em;
+        color:#372f4f;
+        font-weight: 700;
+        position: absolute;
+        left: 40%;
+        margin-top: 40px;
+    }
+    .class {
+      font-size: 20px;
+      letter-spacing: 4px;
+      padding: 50px 30px;
+      border-left: 2px solid #5918df;
+
+      @media (max-width: 800px) {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .code-l {
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+
+      .dot {
+        position: relative;
+        bottom: 6px;
+        color: #342657;
+      }
+    }
+  }
+}
